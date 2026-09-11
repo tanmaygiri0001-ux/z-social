@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: z-social-api
+    runtime: node
+    rootDir: .
+    buildCommand: pnpm install --prod
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+
+  - type: web
+    name: z-social-web
+    runtime: static
+    rootDir: web
+    buildCommand: pnpm install && pnpm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false

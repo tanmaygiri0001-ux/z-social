@@ -1,0 +1,2 @@
+/* Remove the visible divider above the main feed/story strip. */
+.feed,.feed-heading,.stories{border-top:0!important}.stories.card{border-top:0!important}.layout{border-top:0!important}.stories{scrollbar-width:none;-ms-overflow-style:none}.stories::-webkit-scrollbar{display:none}

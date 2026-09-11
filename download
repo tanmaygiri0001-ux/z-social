@@ -1,0 +1,7 @@
+node_modules/
+.env
+web/.env
+web/node_modules/
+web/dist/
+uploads/
+pnpm-lock.yaml
